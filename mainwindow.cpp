@@ -2,7 +2,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "tabledialog.h"
-#include "findreplacedialog.h"
+#include "finderdialog.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -43,11 +43,11 @@ MainWindow::MainWindow(QWidget *parent)
     connect(cellColorAction, &QAction::triggered, this, &MainWindow::onCellColorChanged);
 
 
-    findReplaceDialog = new FindReplaceDialog(this);
+    finderDialog = new FinderDialog(this);
 
-    connect(findReplaceDialog, &FindReplaceDialog::findNext, this, &MainWindow::findNext);
-    connect(findReplaceDialog, &FindReplaceDialog::replace, this, &MainWindow::replace);
-    connect(findReplaceDialog, &FindReplaceDialog::replaceAll, this, &MainWindow::replaceAll);
+    connect(finderDialog, &FinderDialog::findNext, this, &MainWindow::findNext);
+    connect(finderDialog, &FinderDialog::replace, this, &MainWindow::replace);
+    connect(finderDialog, &FinderDialog::replaceAll, this, &MainWindow::replaceAll);
 
     connect(ui->actionRestore, &QAction::triggered, this, &MainWindow::on_actionRestore_triggered);
 

@@ -79,7 +79,7 @@ private:
     QTemporaryFile tempFile;
     int currentPadding = 10;
     QColor currentCellColor;
-    FindReplaceDialog *findReplaceDialog;
+    FinderDialog *finderDialog;
     void mergeFormatOnWordOrSelection(const QTextCharFormat &format);
 };
 
