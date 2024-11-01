@@ -4,7 +4,7 @@
 #include <QDialog>
 
 namespace Ui {
-class TableDialog;
+class Dialog;
 }
 
 class TableDialog : public QDialog
@@ -20,10 +20,10 @@ public:
 
 
 private slots:
-    void on_okButton_clicked();
+    void on_confirmButton_clicked();
 
 private:
-    Ui::TableDialog *ui;
+    Ui::Dialog *ui;
 };
 
 #endif // TABLEDIALOG_H

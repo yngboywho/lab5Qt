@@ -1,14 +1,33 @@
 #include "tabledialog.h"
 #include "ui_tabledialog.h"
 
-tabledialog::tabledialog(QWidget *parent) :
+TableDialog::TableDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::tabledialog)
+    ui(new Ui::Dialog)
 {
     ui->setupUi(this);
+
+    ui->rowSpinBox->setRange(1, 50);
+    ui->columnsSpinBox->setRange(1, 50);
 }
 
-tabledialog::~tabledialog()
+TableDialog::~TableDialog()
 {
     delete ui;
+}
+
+int TableDialog::getRowCount() const
+{
+
+    return ui->rowSpinBox->value();
+}
+
+int TableDialog::getColumnCount() const
+{
+    return ui->columnsSpinBox->value();
+}
+
+void TableDialog::on_confirmButton_clicked()
+{
+    accept();
 }
