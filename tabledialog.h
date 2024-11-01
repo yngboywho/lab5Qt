@@ -4,16 +4,16 @@
 #include <QDialog>
 
 namespace Ui {
-class tabledialog;
+class TableDialog;
 }
 
-class tabledialog : public QDialog
+class TableDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit tabledialog(QWidget *parent = nullptr);
-    ~tabledialog();
+    explicit TableDialog(QWidget *parent = nullptr);
+    ~TableDialog();
 
     int getRowCount() const;
     int getColumnCount() const;
@@ -23,7 +23,7 @@ private slots:
     void on_okButton_clicked();
 
 private:
-    Ui::tabledialog *ui;
+    Ui::TableDialog *ui;
 };
 
 #endif // TABLEDIALOG_H
