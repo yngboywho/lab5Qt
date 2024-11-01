@@ -15,6 +15,13 @@ public:
     explicit tabledialog(QWidget *parent = nullptr);
     ~tabledialog();
 
+    int getRowCount() const;
+    int getColumnCount() const;
+
+
+private slots:
+    void on_okButton_clicked();
+
 private:
     Ui::tabledialog *ui;
 };
