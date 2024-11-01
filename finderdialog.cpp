@@ -3,7 +3,7 @@
 
 FinderDialog::FinderDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::FinderDialog)
+    ui(new Ui::finderdialog)
 {
     ui->setupUi(this);
 

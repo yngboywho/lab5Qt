@@ -26,7 +26,7 @@
 #include <QFontComboBox>
 #include <QToolBar>
 
-
+#include "finderdialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

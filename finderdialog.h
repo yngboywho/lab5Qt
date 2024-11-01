@@ -4,7 +4,7 @@
 #include <QDialog>
 
 namespace Ui {
-class FinderDialog;
+class finderdialog;
 }
 
 class FinderDialog : public QDialog
@@ -25,7 +25,7 @@ signals:
     void replaceAll();
 
 private:
-    Ui::FinderDialog *ui;
+    Ui::finderdialog *ui;
 };
 
 #endif // FINDERDIALOG_H
