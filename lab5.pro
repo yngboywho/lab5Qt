@@ -11,15 +11,18 @@ CONFIG += c++17
 SOURCES += \
     finderdialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    tabledialog.cpp
 
 HEADERS += \
     finderdialog.h \
-    mainwindow.h
+    mainwindow.h \
+    tabledialog.h
 
 FORMS += \
     finderdialog.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    tabledialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
