@@ -149,6 +149,12 @@ void MainWindow::on_actionSave_triggered()
     QString content = ui->textEdit->toHtml();
     out << content;
     file.close();
+
+
+    ui->textEdit->document()->setModified(false);
+    QMessageBox::information(this, "Сохранение", "Файл успешно сохранён!");
+
+
 }
 
 
