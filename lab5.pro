@@ -12,17 +12,33 @@ SOURCES += \
     finderdialog.cpp \
     main.cpp \
     mainwindow.cpp \
-    tabledialog.cpp
+    tabledialog.cpp \
+    fioitemalex.cpp \
+    fioitemslava.cpp \
+    formsdialog.cpp \
+    grapheditwidget.cpp \
+    graphscene.cpp \
+    movingdog.cpp \
+    movingcar.cpp
 
 HEADERS += \
     finderdialog.h \
     mainwindow.h \
-    tabledialog.h
+    tabledialog.h \
+    fioitemalex.h \
+    fioitemslava.h \
+    formsdialog.h \
+    grapheditwidget.h \
+    graphscene.h \
+    movingdog.h \
+    movingcar.h
 
 FORMS += \
     finderdialog.ui \
     mainwindow.ui \
-    tabledialog.ui
+    tabledialog.ui \
+    formsdialog.ui \
+    grapheditwidget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -7,8 +7,8 @@ TableDialog::TableDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->rowSpinBox->setRange(1, 50);
-    ui->columnsSpinBox->setRange(1, 50);
+    ui->rowSpinBox->setRange(1, 30);
+    ui->columnsSpinBox->setRange(1, 30);
 }
 
 TableDialog::~TableDialog()
