@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../../lab6/grapheditwidget.h"
+#include "../../../grapheditwidget.h"
 #include <QtCore/qmetatype.h>
 #include <QtCore/QList>
 
@@ -40,18 +40,18 @@ namespace {
 struct qt_meta_stringdata_CLASSGraphEditWidgetENDCLASS_t {};
 static constexpr auto qt_meta_stringdata_CLASSGraphEditWidgetENDCLASS = QtMocHelpers::stringData(
     "GraphEditWidget",
-    "on_btnAddForms_clicked",
+    "on_addButton_clicked",
     "",
-    "on_btnBrush_clicked",
-    "on_btnEraser_clicked",
-    "on_colorPicker_clicked",
+    "on_brushButton_clicked",
+    "on_eraserButton_clicked",
+    "on_colorSelect_clicked",
     "handleSceneMousePress",
     "QGraphicsSceneMouseEvent*",
     "event",
     "handleSceneMouseMove",
     "handleSceneMouseRelease",
-    "on_btnBackground_clicked",
-    "on_btnDeleteForms_clicked",
+    "on_backgroundButton_clicked",
+    "on_deleteButton_clicked",
     "drawNameAndSurname",
     "drawNameAndSurname1",
     "onFormsCreated",
@@ -67,18 +67,18 @@ static constexpr auto qt_meta_stringdata_CLASSGraphEditWidgetENDCLASS = QtMocHel
 struct qt_meta_stringdata_CLASSGraphEditWidgetENDCLASS_t {
     uint offsetsAndSizes[46];
     char stringdata0[16];
-    char stringdata1[23];
+    char stringdata1[21];
     char stringdata2[1];
-    char stringdata3[20];
-    char stringdata4[21];
+    char stringdata3[23];
+    char stringdata4[24];
     char stringdata5[23];
     char stringdata6[22];
     char stringdata7[26];
     char stringdata8[6];
     char stringdata9[21];
     char stringdata10[24];
-    char stringdata11[25];
-    char stringdata12[26];
+    char stringdata11[28];
+    char stringdata12[24];
     char stringdata13[19];
     char stringdata14[20];
     char stringdata15[15];
@@ -95,42 +95,42 @@ struct qt_meta_stringdata_CLASSGraphEditWidgetENDCLASS_t {
 Q_CONSTINIT static const qt_meta_stringdata_CLASSGraphEditWidgetENDCLASS_t qt_meta_stringdata_CLASSGraphEditWidgetENDCLASS = {
     {
         QT_MOC_LITERAL(0, 15),  // "GraphEditWidget"
-        QT_MOC_LITERAL(16, 22),  // "on_btnAddForms_clicked"
-        QT_MOC_LITERAL(39, 0),  // ""
-        QT_MOC_LITERAL(40, 19),  // "on_btnBrush_clicked"
-        QT_MOC_LITERAL(60, 20),  // "on_btnEraser_clicked"
-        QT_MOC_LITERAL(81, 22),  // "on_colorPicker_clicked"
-        QT_MOC_LITERAL(104, 21),  // "handleSceneMousePress"
-        QT_MOC_LITERAL(126, 25),  // "QGraphicsSceneMouseEvent*"
-        QT_MOC_LITERAL(152, 5),  // "event"
-        QT_MOC_LITERAL(158, 20),  // "handleSceneMouseMove"
-        QT_MOC_LITERAL(179, 23),  // "handleSceneMouseRelease"
-        QT_MOC_LITERAL(203, 24),  // "on_btnBackground_clicked"
-        QT_MOC_LITERAL(228, 25),  // "on_btnDeleteForms_clicked"
-        QT_MOC_LITERAL(254, 18),  // "drawNameAndSurname"
-        QT_MOC_LITERAL(273, 19),  // "drawNameAndSurname1"
-        QT_MOC_LITERAL(293, 14),  // "onFormsCreated"
-        QT_MOC_LITERAL(308, 9),  // "formsType"
-        QT_MOC_LITERAL(318, 9),  // "formsSize"
-        QT_MOC_LITERAL(328, 9),  // "fillColor"
-        QT_MOC_LITERAL(338, 11),  // "strokeColor"
-        QT_MOC_LITERAL(350, 6),  // "filled"
-        QT_MOC_LITERAL(357, 10),  // "QList<int>"
-        QT_MOC_LITERAL(368, 13)   // "triangleSides"
+        QT_MOC_LITERAL(16, 20),  // "on_addButton_clicked"
+        QT_MOC_LITERAL(37, 0),  // ""
+        QT_MOC_LITERAL(38, 22),  // "on_brushButton_clicked"
+        QT_MOC_LITERAL(61, 23),  // "on_eraserButton_clicked"
+        QT_MOC_LITERAL(85, 22),  // "on_colorSelect_clicked"
+        QT_MOC_LITERAL(108, 21),  // "handleSceneMousePress"
+        QT_MOC_LITERAL(130, 25),  // "QGraphicsSceneMouseEvent*"
+        QT_MOC_LITERAL(156, 5),  // "event"
+        QT_MOC_LITERAL(162, 20),  // "handleSceneMouseMove"
+        QT_MOC_LITERAL(183, 23),  // "handleSceneMouseRelease"
+        QT_MOC_LITERAL(207, 27),  // "on_backgroundButton_clicked"
+        QT_MOC_LITERAL(235, 23),  // "on_deleteButton_clicked"
+        QT_MOC_LITERAL(259, 18),  // "drawNameAndSurname"
+        QT_MOC_LITERAL(278, 19),  // "drawNameAndSurname1"
+        QT_MOC_LITERAL(298, 14),  // "onFormsCreated"
+        QT_MOC_LITERAL(313, 9),  // "formsType"
+        QT_MOC_LITERAL(323, 9),  // "formsSize"
+        QT_MOC_LITERAL(333, 9),  // "fillColor"
+        QT_MOC_LITERAL(343, 11),  // "strokeColor"
+        QT_MOC_LITERAL(355, 6),  // "filled"
+        QT_MOC_LITERAL(362, 10),  // "QList<int>"
+        QT_MOC_LITERAL(373, 13)   // "triangleSides"
     },
     "GraphEditWidget",
-    "on_btnAddForms_clicked",
+    "on_addButton_clicked",
     "",
-    "on_btnBrush_clicked",
-    "on_btnEraser_clicked",
-    "on_colorPicker_clicked",
+    "on_brushButton_clicked",
+    "on_eraserButton_clicked",
+    "on_colorSelect_clicked",
     "handleSceneMousePress",
     "QGraphicsSceneMouseEvent*",
     "event",
     "handleSceneMouseMove",
     "handleSceneMouseRelease",
-    "on_btnBackground_clicked",
-    "on_btnDeleteForms_clicked",
+    "on_backgroundButton_clicked",
+    "on_deleteButton_clicked",
     "drawNameAndSurname",
     "drawNameAndSurname1",
     "onFormsCreated",
@@ -199,13 +199,13 @@ Q_CONSTINIT const QMetaObject GraphEditWidget::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSGraphEditWidgetENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<GraphEditWidget, std::true_type>,
-        // method 'on_btnAddForms_clicked'
+        // method 'on_addButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_btnBrush_clicked'
+        // method 'on_brushButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_btnEraser_clicked'
+        // method 'on_eraserButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_colorPicker_clicked'
+        // method 'on_colorSelect_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'handleSceneMousePress'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -216,9 +216,9 @@ Q_CONSTINIT const QMetaObject GraphEditWidget::staticMetaObject = { {
         // method 'handleSceneMouseRelease'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QGraphicsSceneMouseEvent *, std::false_type>,
-        // method 'on_btnBackground_clicked'
+        // method 'on_backgroundButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_btnDeleteForms_clicked'
+        // method 'on_deleteButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'drawNameAndSurname'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -242,15 +242,15 @@ void GraphEditWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         auto *_t = static_cast<GraphEditWidget *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_btnAddForms_clicked(); break;
-        case 1: _t->on_btnBrush_clicked(); break;
-        case 2: _t->on_btnEraser_clicked(); break;
-        case 3: _t->on_colorPicker_clicked(); break;
+        case 0: _t->on_addButton_clicked(); break;
+        case 1: _t->on_brushButton_clicked(); break;
+        case 2: _t->on_eraserButton_clicked(); break;
+        case 3: _t->on_colorSelect_clicked(); break;
         case 4: _t->handleSceneMousePress((*reinterpret_cast< std::add_pointer_t<QGraphicsSceneMouseEvent*>>(_a[1]))); break;
         case 5: _t->handleSceneMouseMove((*reinterpret_cast< std::add_pointer_t<QGraphicsSceneMouseEvent*>>(_a[1]))); break;
         case 6: _t->handleSceneMouseRelease((*reinterpret_cast< std::add_pointer_t<QGraphicsSceneMouseEvent*>>(_a[1]))); break;
-        case 7: _t->on_btnBackground_clicked(); break;
-        case 8: _t->on_btnDeleteForms_clicked(); break;
+        case 7: _t->on_backgroundButton_clicked(); break;
+        case 8: _t->on_deleteButton_clicked(); break;
         case 9: _t->drawNameAndSurname(); break;
         case 10: _t->drawNameAndSurname1(); break;
         case 11: _t->onFormsCreated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QSize>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QColor>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<QColor>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[5])),(*reinterpret_cast< std::add_pointer_t<QList<int>>>(_a[6]))); break;

@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../../lab6/mainwindow.h"
+#include "../../../mainwindow.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
@@ -70,12 +70,11 @@ static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers:
     "onComboBoxChanged",
     "index",
     "onSpinBoxChanged",
-    "value",
     "openGraphEditWidget"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
-    uint offsetsAndSizes[66];
+    uint offsetsAndSizes[64];
     char stringdata0[11];
     char stringdata1[23];
     char stringdata2[1];
@@ -107,8 +106,7 @@ struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
     char stringdata28[18];
     char stringdata29[6];
     char stringdata30[17];
-    char stringdata31[6];
-    char stringdata32[20];
+    char stringdata31[20];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -145,8 +143,7 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(432, 17),  // "onComboBoxChanged"
         QT_MOC_LITERAL(450, 5),  // "index"
         QT_MOC_LITERAL(456, 16),  // "onSpinBoxChanged"
-        QT_MOC_LITERAL(473, 5),  // "value"
-        QT_MOC_LITERAL(479, 19)   // "openGraphEditWidget"
+        QT_MOC_LITERAL(473, 19)   // "openGraphEditWidget"
     },
     "MainWindow",
     "on_actionNew_triggered",
@@ -179,7 +176,6 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
     "onComboBoxChanged",
     "index",
     "onSpinBoxChanged",
-    "value",
     "openGraphEditWidget"
 };
 #undef QT_MOC_LITERAL
@@ -223,7 +219,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       27,    0,  186,    2, 0x08,   25 /* Private */,
       28,    1,  187,    2, 0x08,   26 /* Private */,
       30,    1,  190,    2, 0x08,   28 /* Private */,
-      32,    0,  193,    2, 0x08,   30 /* Private */,
+      31,    0,  193,    2, 0x08,   30 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -248,7 +244,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,   29,
-    QMetaType::Void, QMetaType::Int,   31,
+    QMetaType::Void, QMetaType::Int,   29,
     QMetaType::Void,
 
        0        // eod

@@ -38,7 +38,7 @@ GraphEditWidget::GraphEditWidget(QWidget *parent)
 
     formsDialog = new FormsDialog(this);
     connect(formsDialog, &FormsDialog::formsCreated, this, &GraphEditWidget::onFormsCreated);
-    connect(ui->deleteButton, &QPushButton::clicked, this, &GraphEditWidget::on_btnDeleteForms_clicked);
+    connect(ui->deleteButton, &QPushButton::clicked, this, &GraphEditWidget::on_deleteButton_clicked);
 
 
     connect(scene, &GraphScene::mousePressed, this, &GraphEditWidget::handleSceneMousePress);
@@ -55,30 +55,30 @@ GraphEditWidget::GraphEditWidget(QWidget *parent)
     connect(ui->drawNameButton, &QPushButton::clicked, this, &GraphEditWidget::drawNameAndSurname);
     connect(ui->drawNameButton, &QPushButton::clicked, this, &GraphEditWidget::drawNameAndSurname1);
 
-    QGraphicsPixmapItem *topWall = new QGraphicsPixmapItem(QPixmap(":/assets/wall.png"));
+    QGraphicsPixmapItem *topWall = new QGraphicsPixmapItem(QPixmap(":/assets/wall1.png"));
     topWall->setPos(-205, -50);
     QTransform transform;
     transform.scale(2.4, 1);
     topWall->setTransform(transform);
     scene->addItem(topWall);
 
-    QGraphicsPixmapItem *bottomWall = new QGraphicsPixmapItem(QPixmap(":/assets/wall.png"));
+    QGraphicsPixmapItem *bottomWall = new QGraphicsPixmapItem(QPixmap(":/assets/wall1.png"));
     bottomWall->setPos(-205,360);
     transform.scale(1, 1);
     bottomWall->setTransform(transform);
     scene->addItem(bottomWall);
 
-    QGraphicsPixmapItem *leftWall = new QGraphicsPixmapItem(QPixmap(":/assets/wall.png"));
-    leftWall->setPos(-185, -35);
+    QGraphicsPixmapItem *leftWall = new QGraphicsPixmapItem(QPixmap(":/assets/wall1.png"));
+    leftWall->setPos(-185, -50);
     leftWall->setRotation(90);
-    transform.scale(0.5, 1.1);
+    transform.scale(0.5, 1.275);
     leftWall->setTransform(transform);
     scene->addItem(leftWall);
 
-    QGraphicsPixmapItem *RightWall = new QGraphicsPixmapItem(QPixmap(":/assets/wall.png"));
+    QGraphicsPixmapItem *RightWall = new QGraphicsPixmapItem(QPixmap(":/assets/wall1.png"));
     RightWall->setPos(660,-35);
     RightWall->setRotation(90);
-    transform.scale(1.1, 1);
+    transform.scale(1.08, 0.965);
     RightWall->setTransform(transform);
     scene->addItem(RightWall);
 
@@ -96,7 +96,7 @@ GraphEditWidget::~GraphEditWidget()
 }
 
 
-void GraphEditWidget::on_colorPicker_clicked()
+void GraphEditWidget::on_colorSelect_clicked()
 {
     QColor selectedColor = QColorDialog::getColor(brushPen.color(), this, "Выберите цвет кисти");
 
@@ -109,13 +109,13 @@ void GraphEditWidget::on_colorPicker_clicked()
 
 
 
-void GraphEditWidget::on_btnAddForms_clicked()
+void GraphEditWidget::on_addButton_clicked()
 {
     formsDialog->setSignalEmitted(false);
     formsDialog->exec();
 }
 
-void GraphEditWidget::on_btnDeleteForms_clicked() {
+void GraphEditWidget::on_deleteButton_clicked() {
     QPointF scenePos = lastClickPos;
 
     QRectF searchArea(scenePos.x() - 5, scenePos.y() - 5, 10, 10);
@@ -133,33 +133,35 @@ void GraphEditWidget::on_btnDeleteForms_clicked() {
 
 
 void GraphEditWidget::onFormsCreated(const QString &formsType, const QSize &formsSize,
-                                   const QColor &fillColor, const QColor &strokeColor,
-                                   bool filled, const QList<int> &triangleSides)
+                                     const QColor &fillColor, const QColor &strokeColor,
+                                     bool filled, const QList<int> &triangleSides)
 {
-
+    qDebug() << "Received Form Type:" << formsType;
+    qDebug() << "Received Form Size:" << formsSize;
+    qDebug() << "Fill Color:" << fillColor;
+    qDebug() << "Stroke Color:" << strokeColor;
+    qDebug() << "Filled:" << filled;
 
     QGraphicsItem *item = nullptr;
 
-
-    if (formsType == "Прямоугольник") {
+    if (formsType == "Rectangle") {
         item = new QGraphicsRectItem(0, 0, formsSize.width(), formsSize.height());
         QGraphicsRectItem *rectItem = qgraphicsitem_cast<QGraphicsRectItem *>(item);
         rectItem->setPen(QPen(strokeColor));
         if (filled) rectItem->setBrush(QBrush(fillColor));
-    } else if (formsType == "Круг") {
+    } else if (formsType == "Circle") {
         item = new QGraphicsEllipseItem(0, 0, formsSize.width(), formsSize.height());
         QGraphicsEllipseItem *ellipseItem = qgraphicsitem_cast<QGraphicsEllipseItem *>(item);
         ellipseItem->setPen(QPen(strokeColor));
         if (filled) ellipseItem->setBrush(QBrush(fillColor));
-    } else if (formsType == "Треугольник") {
+    } else if (formsType == "Triangle") {
         if (triangleSides.size() == 3) {
-
             int a = triangleSides[0];
             int b = triangleSides[1];
             int c = triangleSides[2];
 
             if (a + b > c && a + c > b && b + c > a) {
-                double angle = acos((b*b + c*c - a*a) / (2.0 * b * c));
+                double angle = acos((b * b + c * c - a * a) / (2.0 * b * c));
                 QPolygonF triangle;
                 triangle << QPointF(0, 0) << QPointF(b, 0)
                          << QPointF(c * cos(angle), c * sin(angle));
@@ -169,19 +171,24 @@ void GraphEditWidget::onFormsCreated(const QString &formsType, const QSize &form
                 polygonItem->setPen(QPen(strokeColor));
                 if (filled) polygonItem->setBrush(QBrush(fillColor));
             } else {
+                qDebug() << "Invalid triangle sides";
             }
         }
     }
 
     if (item) {
+        qDebug() << "Item successfully created";
         item->setFlag(QGraphicsItem::ItemIsMovable);
         scene->addItem(item);
+    } else {
+        qDebug() << "Failed to create item";
     }
 }
 
 
 
-void GraphEditWidget::on_btnBrush_clicked()
+
+void GraphEditWidget::on_brushButton_clicked()
 {
 
     int size = ui->brushSizeSpinBox->value();
@@ -200,7 +207,7 @@ void GraphEditWidget::on_btnBrush_clicked()
 
 
 
-void GraphEditWidget::on_btnEraser_clicked()
+void GraphEditWidget::on_eraserButton_clicked()
 {
     int size = ui->eraserSizeSpinBox->value();
     QColor backgroundColor = scene->backgroundBrush().color();
@@ -286,7 +293,7 @@ void GraphEditWidget::handleSceneMouseRelease(QGraphicsSceneMouseEvent *event)
 
 
 
-void GraphEditWidget::on_btnBackground_clicked()
+void GraphEditWidget::on_backgroundButton_clicked()
 {
 
     QColor selectedColor = QColorDialog::getColor(scene->backgroundBrush().color(), this, "Выберите цвет фона");

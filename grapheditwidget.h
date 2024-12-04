@@ -24,18 +24,18 @@ public:
 
 
 private slots:
-    void on_btnAddForms_clicked();
-    void on_btnBrush_clicked();
-    void on_btnEraser_clicked();
+    void on_addButton_clicked();
+    void on_brushButton_clicked();
+    void on_eraserButton_clicked();
 
-    void on_colorPicker_clicked();
+    void on_colorSelect_clicked();
 
     void handleSceneMousePress(QGraphicsSceneMouseEvent *event);
     void handleSceneMouseMove(QGraphicsSceneMouseEvent *event);
     void handleSceneMouseRelease(QGraphicsSceneMouseEvent *event);
 
-    void on_btnBackground_clicked();
-    void on_btnDeleteForms_clicked();
+    void on_backgroundButton_clicked();
+    void on_deleteButton_clicked();
 
     void drawNameAndSurname();
     void drawNameAndSurname1();

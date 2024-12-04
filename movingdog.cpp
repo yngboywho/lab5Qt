@@ -21,14 +21,15 @@ void MovingDog::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
     Q_UNUSED(option);
     Q_UNUSED(widget);
 
+
     // Тело собаки
     painter->setBrush(Qt::black);
     painter->drawEllipse(boundingRect());
 
     // Уши
-    painter->setBrush(Qt::darkGray);
+    /*painter->setBrush(Qt::darkGray);
     painter->drawEllipse(10, -10, 15, 20);
-    painter->drawEllipse(25, -10, 15, 20);
+    painter->drawEllipse(25, -10, 15, 20);*/
 
     // Глаза
     painter->setBrush(Qt::white);

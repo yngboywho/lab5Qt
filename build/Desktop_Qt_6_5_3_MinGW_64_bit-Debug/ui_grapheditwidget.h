@@ -44,10 +44,10 @@ public:
     {
         if (GraphEditWidget->objectName().isEmpty())
             GraphEditWidget->setObjectName("GraphEditWidget");
-        GraphEditWidget->resize(843, 501);
+        GraphEditWidget->resize(1016, 676);
         graphicsView = new QGraphicsView(GraphEditWidget);
         graphicsView->setObjectName("graphicsView");
-        graphicsView->setGeometry(QRect(10, 90, 821, 401));
+        graphicsView->setGeometry(QRect(10, 90, 921, 471));
         drawNameButton = new QPushButton(GraphEditWidget);
         drawNameButton->setObjectName("drawNameButton");
         drawNameButton->setGeometry(QRect(640, 50, 83, 29));

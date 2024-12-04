@@ -71,7 +71,10 @@ private slots:
     void saveSettings();
     void loadSettings();
 
+    void onComboBoxChanged(int index);
+    void onSpinBoxChanged(int index);
 
+    void openGraphEditWidget();
 
 private:
     Ui::MainWindow *ui;

@@ -3,6 +3,7 @@
 #include "ui_mainwindow.h"
 #include "tabledialog.h"
 #include "finderdialog.h"
+#include "grapheditwidget.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -50,6 +51,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(finderDialog, &FinderDialog::replaceAll, this, &MainWindow::replaceAll);
 
     connect(ui->actionRestore, &QAction::triggered, this, &MainWindow::on_actionRestore_triggered);
+    //
+    QAction *openGraphEditWidgetAction = toolbar->addAction("Open Graphic Editor");
+    connect(openGraphEditWidgetAction, &QAction::triggered, this, &MainWindow::openGraphEditWidget);
 
 
 
@@ -61,6 +65,12 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::openGraphEditWidget() //
+{
+    GraphEditWidget *graphEditWidget = new GraphEditWidget(this);
+    graphEditWidget->exec();
 }
 
 
@@ -150,11 +160,8 @@ void MainWindow::on_actionSave_triggered()
     out << content;
     file.close();
 
-
     ui->textEdit->document()->setModified(false);
-    QMessageBox::information(this, "Сохранение", "Файл успешно сохранён!");
-
-
+    QMessageBox::information(this, "Сохранение", "Файл успешно сохранен!");
 }
 
 
@@ -504,4 +511,19 @@ void MainWindow::loadSettings()
             }
         }
     }
+}
+
+
+void MainWindow::onComboBoxChanged(int index)
+{
+    QSettings settings("MyCompany", "MyApp");
+    settings.setValue("comboBoxIndex", index);
+    saveSettings();
+}
+
+void MainWindow::onSpinBoxChanged(int value)
+{
+    QSettings settings("MyCompany", "MyApp");
+    settings.setValue("spinBoxValue", value);
+    saveSettings();
 }
